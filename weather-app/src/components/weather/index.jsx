@@ -45,7 +45,7 @@ export default function Weather() {
     useEffect(() => {
         fetchWeatherData("Islamabad")
     }, [])
-    console.log(weatherData)
+
     return <div>
         <Search
             search={search}
@@ -62,21 +62,17 @@ export default function Weather() {
                     <div className="data">
                         <span>{getCurrentDate()}</span>
                     </div>
-                    <div>{weatherData?.name}</div>
+                    {/* <div>{weatherData?.name}</div> */}
                     <div className="temp">{weatherData?.main?.temp}°C</div>
                     <p className="desctiption">{weatherData?.weather?.[0]?.description}</p>
                     <div className="weather-info">
                         <div className="column">
-                            <div>
-                                <p className="wind">{weatherData?.wind?.speed}</p>
-                                <p>Wind Speed</p>
-                            </div>
-                            <div className="column">
-                                <div>
-                                    <p className="Humidity">{weatherData?.main?.humidity}%</p>
-                                    <p>Humidity</p>
-                                </div>
-                            </div>
+                            <p className="wind">{weatherData?.wind?.speed}</p>
+                            <p>Wind Speed</p>
+                        </div>
+                        <div className="column">
+                            <p className="Humidity">{weatherData?.main?.humidity}%</p>
+                            <p>Humidity</p>
                         </div>
                     </div>
                 </div>
